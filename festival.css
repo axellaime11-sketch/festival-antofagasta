@@ -1,8 +1,13 @@
+/* ==============================
+   ESTILOS GENERALES
+   ============================== */
 body {
   background-color: #f2f2f2; 
   color: #333333;          
   font-family: Arial, sans-serif;  
   line-height: 1.4;         
+  margin: 0;
+  padding: 0;
 }
 
 .contenidoo {
@@ -11,55 +16,131 @@ body {
   padding: 20px;           
 }
 
-
+/* ==============================
+   HEADER
+   ============================== */
 header {
   display: flex;
   align-items: center;
+  justify-content: flex-start; /* Logo a la izquierda */
+  flex-wrap: wrap;             /* Permite bajar elementos en pantallas pequeñas */
   padding: 10px 20px;
   background-color: #c4dafa;
+  gap: 15px;
+  position: relative;
 }
 
+/* Logo */
+.logo img {
+  height: 60px;       /* Tamaño del logo */
+  width: auto;
+  max-width: 100%;
+}
 
+/* Título centrado usando posición absoluta en pantallas grandes */
+header h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 0;
+  flex: 1;            /* Ocupa todo el espacio disponible */
+}
+
+/* ==============================
+   NAVEGACIÓN
+   ============================== */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
+  margin: 10px 0 0 0;
+  padding: 0;
 }
 
 nav a {
   color: #4a90e2;
   text-decoration: none;
   padding: 8px;
-  
+  display: block;
+  text-align: center;
+  transition: background 0.3s;
 }
 
 nav a:hover {
   background-color: #e6f0fb;
   border-radius: 50px;
-  outline: none;
 }
 
-.logo{
-    height: 100px;
-    display: flex;
-    margin-right: 400px;
-}
-.imagen{
+/* ==============================
+   IMAGEN PRINCIPAL
+   ============================== */
+.imagen {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 600px;
-  height: 475px;
-   border: 15px ridge #c4dafa;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border: 15px ridge #c4dafa;
 }
-h1{
-    font-family: 'Times New Roman', Times, serif;
+
+/* ==============================
+   TITULOS SECUNDARIOS
+   ============================== */
+h2 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+/* ==============================
+   MEDIA QUERIES
+   ============================== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;  /* Logo arriba, título debajo */
+    align-items: center;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
     text-align: center;
-     background-color: #c4dafa;
-     font-size: 30px; 
-     padding: 15px 0;
-     margin-bottom: 30px;    
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .imagen {
+    width: 90%;
+    border-width: 10px;
+  }
 }
-     
+
+/* Móvil */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  nav ul {
+    flex-direction: column;  /* Menú vertical */
+    gap: 5px;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+}
+
+
+
 

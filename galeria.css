@@ -1,26 +1,31 @@
+/* ======== ESTILO GENERAL ======== */
 body {
-  background-color: #f2f2f2; 
-  color: #333333;            
+  background-color: #f2f2f2;
+  color: #333333;
   font-family: Arial, sans-serif;
   line-height: 1.4;
+  margin: 0;
+  padding: 0;
 }
-.contenido {
-  display: flex;
-  flex-wrap: wrap;     
-  justify-content: center;
-  gap: 20px;         
 
+/* ======== TÍTULO ======== */
+h1 {
+  text-align: center;
+  background-color: #c4dafa;
+  font-size: 30px;
+  padding: 15px 0;
+  margin-bottom: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 10px;
 }
-.video{
-   width: 560px;
-  height: 315px;
-  border: 15px ridge #c4dafa;
-}
+
+/* ======== NAVEGACIÓN ======== */
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
 }
@@ -28,21 +33,88 @@ nav ul {
 nav a {
   color: #4a90e2;
   text-decoration: none;
-  padding:8px;
+  padding: 8px 12px;
   display: inline-block;
+  transition: background-color 0.3s ease;
 }
 
-nav a:hover{
+nav a:hover {
   background-color: #e6f0fb;
   border-radius: 4px;
   outline: none;
 }
 
-
-h1{
-    text-align: center;
-     background-color: #c4dafa; 
+/* ======== CONTENEDOR PRINCIPAL ======== */
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
+
+/* ======== VIDEOS ======== */
+.video {
+  width: 560px;
+  height: 315px;
+  border: 15px ridge #c4dafa;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+/* Para mantener la proporción del video y hacerlo adaptable */
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ======== RESPONSIVIDAD ======== */
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 992px) {
+  .video {
+    width: 90%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Mantiene proporción de video */
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  nav a {
+    font-size: 15px;
+    padding: 6px 10px;
+  }
+}
+
+/* Celulares (pantallas pequeñas) */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  h1 {
+    font-size: 22px;
+    padding: 10px 0;
+  }
+}
+
 
 
     
