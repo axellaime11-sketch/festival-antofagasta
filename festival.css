@@ -84,6 +84,14 @@ nav a:hover {
   height: auto;
   border: 15px ridge #c4dafa;
 }
+footer {
+  padding: 16px 0;
+  text-align: center;
+  color: #666666;
+  border-top: 1px solid #eeeeee;
+  background-color: #ffffff;
+  font-size: 14px;
+}
 
 /* ==============================
    TITULOS SECUNDARIOS
